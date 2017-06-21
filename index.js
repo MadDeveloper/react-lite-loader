@@ -90,9 +90,15 @@ var Loader = function (_Component) {
          * @memberOf Loader
          */
         value: function render() {
+            var className = this.props.classes;
+
+            if (this.props.animation) {
+                className += ' animate-flicker';
+            }
+
             return _react2.default.createElement(
                 'span',
-                { className: 'animate-flicker ' + this.props.classes, style: { animationDuration: this.props.animationDuration + 's' } },
+                { className: className, style: { animationDuration: this.props.animationDuration + 's' } },
                 this.props.text
             );
         }
@@ -104,9 +110,11 @@ var Loader = function (_Component) {
 Loader.propTypes = {
     text: _propTypes2.default.string,
     classes: _propTypes2.default.string,
-    animationDuration: _propTypes2.default.number };
+    animationDuration: _propTypes2.default.number,
+    animation: _propTypes2.default.bool };
 Loader.defaultProps = {
     text: 'Loading...',
     classes: '',
-    animationDuration: 1.5 };
+    animationDuration: 1.5,
+    animation: true };
 exports.default = Loader;

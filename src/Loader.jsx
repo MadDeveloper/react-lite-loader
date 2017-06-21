@@ -19,7 +19,8 @@ export default class Loader extends Component {
     static propTypes = {
         text: PropTypes.string,
         classes: PropTypes.string,
-        animationDuration: PropTypes.number
+        animationDuration: PropTypes.number,
+        animation: PropTypes.bool
     }
 
     /**
@@ -32,7 +33,8 @@ export default class Loader extends Component {
     static defaultProps = {
         text: 'Loading...',
         classes: '',
-        animationDuration: 1.5
+        animationDuration: 1.5,
+        animation: true
     }
 
     /**
@@ -64,8 +66,14 @@ export default class Loader extends Component {
      * @memberOf Loader
      */
     render () {
+        let className = this.props.classes
+
+        if (this.props.animation) {
+            className += ' animate-flicker'
+        }
+
         return (
-            <span className={`animate-flicker ${this.props.classes}`} style={{ animationDuration: `${this.props.animationDuration}s` }}>{this.props.text}</span>
+            <span className={className} style={{ animationDuration: `${this.props.animationDuration}s` }}>{this.props.text}</span>
         )
     }
 }
