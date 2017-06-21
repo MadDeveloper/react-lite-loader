@@ -1,4 +1,3 @@
-/* global $ */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './index.css'
@@ -17,9 +16,9 @@ export default class Loader extends Component {
      * @memberOf Loader
      */
     static propTypes = {
-        text: PropTypes.string,
-        classes: PropTypes.string,
-        animationDuration: PropTypes.number,
+        children: PropTypes.any,
+        className: PropTypes.string,
+        animationDuration: PropTypes.string,
         animation: PropTypes.bool
     }
 
@@ -31,49 +30,28 @@ export default class Loader extends Component {
      * @memberOf Loader
      */
     static defaultProps = {
-        text: 'Loading...',
-        classes: '',
-        animationDuration: 1.5,
+        children: 'loading...',
+        className: '',
+        animationDuration: '1.5s',
         animation: true
-    }
-
-    /**
-     * Creates an instance of Loader.
-     * @param {any} props
-     *
-     * @memberOf Loader
-     */
-    constructor (props) {
-        super(props);
-
-        this.animationDuration = this.props.animationDuration;
-    }
-
-    /**
-     * Animate the loader
-     *
-     * @memberOf Loader
-     */
-    animate = loader => {
-        $(loader).fadeToggle(this.animationDuration, () => this.animate(loader))
     }
 
     /**
      * Render the component
      *
-     * @returns {Object}
+     * @returns {any}
      *
      * @memberOf Loader
      */
     render () {
-        let className = this.props.classes
+        let className = this.props.className
 
         if (this.props.animation) {
             className += ' animate-flicker'
         }
 
         return (
-            <span className={className} style={{ animationDuration: `${this.props.animationDuration}s` }}>{this.props.text}</span>
+            <span className={className} style={{ animationDuration: this.props.animationDuration }}>{ this.props.children }</span>
         )
     }
 }
