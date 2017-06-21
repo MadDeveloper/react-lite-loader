@@ -1,7 +1,7 @@
 {
   "name": "react-lite-loader",
   "version": "0.1.0",
-  "description": "Sample React text loader",
+  "description": "Sample React loader",
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/babel src/Loader.jsx -o index.js",
