@@ -1,6 +1,6 @@
 # react-lite-loader
 
-A sample React text loader.
+A sample React loader.
 
 ## Installation
 
@@ -33,7 +33,7 @@ const applyCssClasses = <Loader className="h1" />;
 
 **`animation: boolean`**
 
-Indicates if the text will be animated (fade in/out). Defaults to **`true`**.
+Indicates if the loader content will be animated (fade in/out). Defaults to **`true`**.
 
 
 **`animationDuration: string`**
