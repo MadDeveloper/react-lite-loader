@@ -2,6 +2,27 @@
 
 A sample React loader.
 
+## Examples
+
+**Default behaviour**
+
+```jsx
+<Loader />
+```
+
+![](https://media.giphy.com/media/l0Iy7ftKoOJULZtlK/giphy.gif)
+
+
+**With an image**
+
+```jsx
+<Loader animation={false}>
+    <img src="/path/to/images/loader.gif" alt="loading..." />
+</Loader>
+```
+
+![](https://media.giphy.com/media/3og0Iw8t2b7dMntFxm/giphy.gif)
+
 ## Installation
 
 `npm install --save react-lite-loader`
