@@ -43,12 +43,16 @@ const noAnimation = () => (
 
 const complexChildren = () => (
     <Loader animationDuration='1s'>
-        <img src="../assets/images/loader.gif" alt="loading..." />
+        <img src="/path/to/images/loader.gif" alt="loading..." />
     </Loader>
 );
 
 const applyCssClasses = <Loader className="h1" />;
 ```
+
+## Compatiblity
+
+The animation is in pure CSS, using [@keyframes](https://developer.mozilla.org/fr/docs/Web/CSS/@keyframes), you can check the [browsers compability](https://caniuse.com/#search=keyframe).
 
 ## API
 
