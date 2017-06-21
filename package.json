@@ -1,6 +1,6 @@
 {
   "name": "react-lite-loader",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Sample React loader",
   "main": "index.js",
   "scripts": {
